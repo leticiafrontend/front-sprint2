@@ -16,7 +16,7 @@ class ProdutosView extends View {
                       <p class="card__description">
                         ${produto.descricao}
                       </p>
-                      <p class="card__price">${produto.valor}</p>
+                      <p class="card__price">R$ ${produto.valor}</p>
                     </div>
                   </li>
                 `,
