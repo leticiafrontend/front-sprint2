@@ -4,7 +4,6 @@ class ProdutosView extends View {
   }
 
   template(model) {
-    console.log(model.produtos);
     return `
         <ol class="products__list">
           ${
