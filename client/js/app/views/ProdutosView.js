@@ -4,12 +4,15 @@ class ProdutosView extends View {
   }
 
   template(model) {
+    console.log(model.produtos);
     return `
         <ol class="products__list">
-          ${model.produtos
-            .map(
-              (produto) =>
-                `
+          ${
+            model.produtos && model.produtos.length > 0
+              ? model.produtos
+                  .map(
+                    (produto) =>
+                      `
                   <li class="products__card">
                     <div class="card">
                       <img class="card__img" src="${produto.imagem}" alt="${produto.descricao}" />
@@ -20,8 +23,10 @@ class ProdutosView extends View {
                     </div>
                   </li>
                 `,
-            )
-            .join('')}
+                  )
+                  .join('')
+              : `<h1>Nenhum produto encontrado</h1>`
+          }
         </ol>
     `;
   }
